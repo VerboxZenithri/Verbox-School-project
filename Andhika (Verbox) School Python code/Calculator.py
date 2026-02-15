@@ -7,7 +7,7 @@ pygame.init()
 # Konstanta
 LEBAR=1000
 TINGGI=700
-FPS=60
+FPS=85
 
 # Warna Tema Ungu Gelap
 UNGU_GELAP=(40,20,60)
@@ -784,4 +784,5 @@ def main():
     sys.exit()
 
 if __name__=="__main__":
+
     main()
