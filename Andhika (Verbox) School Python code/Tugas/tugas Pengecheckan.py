@@ -1,7 +1,7 @@
 kelipatan_1=4
 kelipatan_2=6 
-kata_1 = "pertanyaan"  #Kata untuk Aturan 1
-kata_2 = "tanya pertanyaan"  #Kata untuk Aturan 2
+kata_1="pertanyaan"  #Kata untuk Aturan 1
+kata_2="tanya pertanyaan"  #Kata untuk Aturan 2
 kata_gabungan="kebanyakan tanya!!!"
 #Melakukan pengecekan
 for angka in range(1, 91):
