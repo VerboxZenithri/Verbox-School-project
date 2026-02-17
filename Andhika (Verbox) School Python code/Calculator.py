@@ -190,7 +190,7 @@ def menu_utama():
                 if card.clicked(pos,event): return str(i+1)
             if btn_keluar.clicked(pos,event): return "keluar"
         draw_bg(layar)
-        draw_gradient_title(layar,"KALKULATOR ADVANCED",LEBAR//2,75)
+        draw_gradient_title(layar,"CALCULATOR ADVANCED",LEBAR//2,75)
         pygame.draw.line(layar,UNGU_NEON,(60,125),(LEBAR-60,125),1)
         pygame.draw.line(layar,UNGU_GLOW,(60,127),(LEBAR-60,127),1)
         for card in cards:
