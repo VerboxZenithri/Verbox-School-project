@@ -234,7 +234,7 @@ def scene_operasi_dasar():
 def scene_pangkat_akar():
     input1=InputBox(LEBAR//2-160,130,320,40,"Angka:")
     input2=InputBox(LEBAR//2-160,205,320,40,"n (akar/pangkat n):")
-    btns=[Button(100+i*195,285,180,50,lb) for i,lb in enumerate(["x²","x³","√x","ⁿ√x","x^n"])]
+    btns=[Button(100+i*195,285,180,50,lb) for i,lb in enumerate(["x²","x³","√x"," (n)√x","x^n"])]
     btn_back=Button(40,640,160,50,"[ KEMBALI ]",(80,20,30),(140,40,40))
     hasil=""
     while True:
@@ -252,7 +252,7 @@ def scene_pangkat_akar():
                         elif i==2: hasil="ERROR: Tidak bisa akar negatif" if x<0 else f"√{x} = {math.sqrt(x):.6f}"
                         elif i==3:
                             n=int(input2.text)
-                            hasil="ERROR: Pangkat tidak boleh 0" if n==0 else f"ⁿ√{x} (n={n}) = {x**(1/n):.6f}"
+                            hasil="ERROR: Pangkat tidak boleh 0" if n==0 else f"(n)√{x} (n={n}) = {x**(1/n):.6f}"
                         elif i==4: n=float(input2.text); hasil=f"{x}^{n} = {x**n}"
                     except: hasil="ERROR: Input tidak valid"
         draw_bg(layar); draw_scene_header(layar,"PANGKAT & AKAR")
@@ -294,7 +294,7 @@ def scene_trigonometri():
 def scene_logaritma():
     input1=InputBox(LEBAR//2-160,130,320,40,"Angka:")
     input2=InputBox(LEBAR//2-160,205,320,40,"Base (untuk log_n):")
-    btns=[Button(330,290,140,50,lb) for lb in ["log₁₀","ln","log_n"]]
+    btns=[Button(330,290,140,50,lb) for lb in ["log10","ln","log_n"]]
     for i,btn in enumerate(btns): btn.rect.x=330+i*160
     btn_back=Button(40,640,160,50,"[ KEMBALI ]",(80,20,30),(140,40,40))
     hasil=""
@@ -309,7 +309,7 @@ def scene_logaritma():
                     try:
                         x=float(input1.text)
                         if x<=0: hasil="ERROR: Log hanya untuk x > 0"; continue
-                        if i==0: hasil=f"log₁₀({x}) = {math.log10(x):.6f}"
+                        if i==0: hasil=f"log10({x}) = {math.log10(x):.6f}"
                         elif i==1: hasil=f"ln({x}) = {math.log(x):.6f}"
                         elif i==2:
                             base=float(input2.text)
@@ -377,7 +377,7 @@ def scene_persamaan_kuadrat():
                     elif D==0: hasil.append(f"x₁ = x₂ = {-b/(2*a):.6f}")
                     else:
                         real=-b/(2*a); imag=math.sqrt(abs(D))/(2*a)
-                        hasil+=[f"x₁ = {real:.4f} + {imag:.4f}i",f"x₂ = {real:.4f} - {imag:.4f}i"]
+                        hasil+=[f"x1 = {real:.4f} + {imag:.4f}i",f"x2 = {real:.4f} - {imag:.4f}i"]
                 except: hasil=["ERROR: Input tidak valid"]
         draw_bg(layar); draw_scene_header(layar,"PERSAMAAN KUADRAT  (ax² + bx + c = 0)")
         for inp in inputs: inp.draw(layar)
@@ -388,7 +388,7 @@ def scene_persamaan_kuadrat():
 
 def scene_konversi_suhu():
     input1=InputBox(LEBAR//2-160,130,320,40,"Nilai:")
-    btns=[Button(80+i*190,210,175,50,lb) for i,lb in enumerate(["C → F","C → K","C → R","F → C","K → C"])]
+    btns=[Button(80+i*190,210,175,50,lb) for i,lb in enumerate(["C --> F","C --> K","C --> R","F --> C","K --> C"])]
     btn_back=Button(40,640,160,50,"[ KEMBALI ]",(80,20,30),(140,40,40))
     hasil=""
     while True:
@@ -416,7 +416,7 @@ def scene_konversi_suhu():
 
 def scene_konversi_panjang():
     input1=InputBox(LEBAR//2-160,130,320,40,"Nilai:")
-    labels=["m → km","m → cm","m → mm","m → ft","km → mil","mil → km"]
+    labels=["m --> km","m --> cm","m --> mm","m --> ft","km --> mil","mil --> km"]
     btns=[Button(80+(i%3)*320,210+(i//3)*70,300,55,lb) for i,lb in enumerate(labels)]
     btn_back=Button(40,640,160,50,"[ KEMBALI ]",(80,20,30),(140,40,40))
     hasil=""
@@ -443,7 +443,7 @@ def scene_konversi_panjang():
 
 def scene_konversi_berat():
     input1=InputBox(LEBAR//2-160,130,320,40,"Nilai:")
-    labels=["kg → g","kg → lb","kg → ton","kg → ons","lb → kg"]
+    labels=["kg --> g","kg --> lb","kg --> ton","kg --> ons","lb --> kg"]
     btns=[Button(80+(i%3)*320,210+(i//3)*70,300,55,lb) for i,lb in enumerate(labels)]
     btn_back=Button(40,640,160,50,"[ KEMBALI ]",(80,20,30),(140,40,40))
     hasil=""
@@ -470,7 +470,7 @@ def scene_konversi_berat():
 
 def scene_sistem_bilangan():
     input1=InputBox(LEBAR//2-160,130,320,40,"Nilai:")
-    labels=["Dec → Bin","Dec → Oct","Dec → Hex","Bin → Dec","Oct → Dec","Hex → Dec"]
+    labels=["Dec --> Bin","Dec --> Oct","Dec --> Hex","Bin --> Dec","Oct --> Dec","Hex --> Dec"]
     btns=[Button(80+(i%3)*320,210+(i//3)*70,300,55,lb) for i,lb in enumerate(labels)]
     btn_back=Button(40,640,160,50,"[ KEMBALI ]",(80,20,30),(140,40,40))
     hasil=""
@@ -483,12 +483,12 @@ def scene_sistem_bilangan():
             for i,btn in enumerate(btns):
                 if btn.clicked(pos,event):
                     try:
-                        if i==0: v=int(input1.text); hasil=f"{v}₁₀ = {bin(v)[2:]}₂"
-                        elif i==1: v=int(input1.text); hasil=f"{v}₁₀ = {oct(v)[2:]}₈"
-                        elif i==2: v=int(input1.text); hasil=f"{v}₁₀ = {hex(v)[2:].upper()}₁₆"
-                        elif i==3: v=input1.text; hasil=f"{v}₂ = {int(v,2)}₁₀"
-                        elif i==4: v=input1.text; hasil=f"{v}₈ = {int(v,8)}₁₀"
-                        elif i==5: v=input1.text; hasil=f"{v}₁₆ = {int(v,16)}₁₀"
+                        if i==0: v=int(input1.text); hasil=f"{v}(10) = {bin(v)[2:]}(2)"
+                        elif i==1: v=int(input1.text); hasil=f"{v}(10) = {oct(v)[2:]}(8)"
+                        elif i==2: v=int(input1.text); hasil=f"{v}(10) = {hex(v)[2:].upper()}(16)"
+                        elif i==3: v=input1.text; hasil=f"{v}(2) = {int(v,2)}(10)"
+                        elif i==4: v=input1.text; hasil=f"{v}(8) = {int(v,8)}(10)"
+                        elif i==5: v=input1.text; hasil=f"{v}(16) = {int(v,16)}(10)"
                     except: hasil="ERROR: Input tidak valid"
         draw_bg(layar); draw_scene_header(layar,"SISTEM BILANGAN")
         input1.draw(layar)
@@ -556,8 +556,8 @@ def scene_matrix():
                         elif i==2: hasil=[f"Det(A) = {a11*a22-a12*a21:.6f}"]
                     except: hasil=["ERROR: Input tidak valid"]
         draw_bg(layar); draw_scene_header(layar,"MATRIX 2x2")
-        render_text("Matrix A",font_kecil,CYAN_ACCENT,ax,ay+5)
-        render_text("Matrix B",font_kecil,CYAN_ACCENT,bx,by+5)
+        render_text("Matrix A",font_kecil,CYAN_ACCENT,ax,ay-10)
+        render_text("Matrix B",font_kecil,CYAN_ACCENT,bx,by-10)
         for inp in ia+ib: inp.draw(layar)
         for btn in btns: btn.check_hover(pos); btn.draw(layar)
         draw_hasil_box(layar,hasil,350,is_list=True)
@@ -579,6 +579,3 @@ def main():
 
 if __name__=="__main__":
     main()
-
-
-#rehat woy, capek ni
