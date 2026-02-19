@@ -25,7 +25,7 @@ def hitung_luas():
                 print(f"Luas Persegi: {luas}")
                 input("\nenter untuk ke menu")
             else:
-                print("Gagal: Sisi harus lebih besar dari nol.")
+                print("Error: Sisi harus lebih besar dari nol.")
 
         # 2. Persegi Panjang
         elif pilihan=='2':
@@ -37,7 +37,7 @@ def hitung_luas():
                 print(f"Luas Persegi Panjang: {luas}")
                 input("\nenter untuk ke menu")
             else:
-                print("Gagal: Nilai harus lebih besar dari nol.")
+                print("Error: Nilai harus lebih besar dari nol.")
 
         # 3. Segitiga
         elif pilihan=='3':
@@ -49,7 +49,7 @@ def hitung_luas():
                 print(f"Luas Segitiga: {luas}")
                 input("\nenter untuk ke menu")
             else:
-                print("Gagal: Nilai harus lebih besar dari nol.")
+                print("Error: Nilai harus lebih besar dari nol.")
 
         # 4. Trapesium
         elif pilihan=='4':
@@ -62,7 +62,7 @@ def hitung_luas():
                 print(f"Luas Trapesium: {luas}")
                 input("\nenter untuk ke menu")
             else:
-                print("Gagal: Nilai harus lebih besar dari nol.")
+                print("Error: Nilai harus lebih besar dari nol.")
 
         # 5. Jajar Genjreng
         elif pilihan=='5':
@@ -74,7 +74,7 @@ def hitung_luas():
                 print(f"Luas Jajar Genjang: {luas}")
                 input("\nenter untuk ke menu")
             else:
-                print("Gagal: Nilai harus lebih besar dari nol.")
+                print("Error: Nilai harus lebih besar dari nol.")
 
         # 6. Belah Ketupat
         elif pilihan=='6':
@@ -86,7 +86,7 @@ def hitung_luas():
                 print(f"Luas Belah Ketupat: {luas}")
                 input("\nenter untuk ke menu")
             else:
-                print("Gagal: Nilai harus lebih besar dari nol.")
+                print("Error: Nilai harus lebih besar dari nol.")
 
         # 7. Layang-Layang
         elif pilihan=='7':
@@ -98,7 +98,7 @@ def hitung_luas():
                 print(f"Luas Layang-Layang: {luas}")
                 input("\nenter untuk ke menu")
             else:
-                print("Gagal: Nilai harus lebih besar dari nol.")
+                print("Error: Nilai harus lebih besar dari nol.")
 
         # 8. Lingkaran
         elif pilihan=='8':
@@ -109,7 +109,7 @@ def hitung_luas():
                 print(f"Luas Lingkaran: {luas}")
                 input("\nenter untuk ke menu")
             else:
-                print("Gagal: Jari-jari harus lebih besar dari nol.")
+                print("Error: Jari-jari harus lebih besar dari nol.")
 
         # 9. Segi Lima (Beraturan)
         elif pilihan=='9':
@@ -121,7 +121,7 @@ def hitung_luas():
                 print(f"Luas Segi Lima Beraturan: {luas}")
                 input("\nenter untuk ke menu")
             else:
-                print("Gagal: Sisi harus lebih besar dari nol.")
+                print("Error: Sisi harus lebih besar dari nol.")
 
         # 10. Segi Enam (Beraturan)
         elif pilihan=='10':
@@ -133,14 +133,14 @@ def hitung_luas():
                 print(f"Luas Segi Enam Beraturan: {luas}")
                 input("\nenter untuk ke menu")
             else:
-                print("Gagal: Sisi harus lebih besar dari nol.")
+                print("Error: Sisi harus lebih besar dari nol.")
         elif pilihan=='0':
             clear()
             break
 
         else:
             clear()
-            print("Pilihan tidak tersedia.")
+            print("[ERROR]Pilihan kosong.")
             input("enter untuk mencoba ulang")
 
 
