@@ -1,1 +1,1 @@
-gak mood
+sakit
